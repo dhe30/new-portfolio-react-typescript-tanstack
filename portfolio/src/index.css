@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  border: 1px solid red;
+  width: 100%;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* background-color: #535bf2; */
+}
+
+/* h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+} */
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.archivo-black-regular {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.archivo-black-bold {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.test {
+  border: 1px solid red
+}
+
+.glassBtn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  height: 70px;
+  min-width: 70px;
+  padding: 15px;
+  background: transparent;
+  outline: none;
+  border: none;
+  z-index: 2;
+}
+
+.glassBtn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 9999px;
+    -webkit-box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7), inset 0 0 3px 1px rgba(255, 255, 255, 0.7);
+            box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7), inset 0 0 3px 1px rgba(255, 255, 255, 0.7);
+    background-color: rgb(255 255 255);
+
+}
+
+.glassBtn::after {
+    content: '';
+    position: absolute;
+    /* top: 0; */
+    z-index: -1;
+    inset: 0;
+    border-radius: 9999px;
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+    -webkit-filter: url(#btn-glass);
+            filter: url(#btn-glass);
+    overflow: hidden;
+    isolation: isolate;
+    /* margin: 0; */
+}
+
+.glassContainer {
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+    isolation: isolate;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 255, 0.175);
+    pointer-events: none;
+        /* text-shadow: 1px 1px 10px black; */
+  
+}
+.glassContainer:hover::before {
+     z-index: 0;
+}
+.glassContainer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+      pointer-events: none;
+
+    border-radius: 30px;
+    /* -webkit-box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7), inset 0 0 3px 1px rgba(255, 255, 255, 0.7);
+            box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7), inset 0 0 3px 1px rgba(255, 255, 255, 0.7); */
+     box-shadow:      inset 0 2px 10px 5px rgba(53, 53, 53, 0.1),
+    inset 0 0 14px 0 rgba(255, 255, 255, 0.35),
+    inset 1px 3px 5px 0 rgba(255, 255, 255, 0.3),
+    inset -1px -5px 3px 0 rgba(255, 255, 255, 0.1),
+    inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: brightness(1.1) 
+        blur(1px)
+        url(#displacementFilter);
+    backdrop-filter: brightness(1.1) 
+        blur(1px)
+        url(#displacementFilter);
+}
+
+.glassContainer::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+      pointer-events: none;
+
+    inset: 0;
+    border-radius: 30px;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    /* -webkit-backdrop-filter: brightness(1.1) 
+        blur(2px)
+        url(#displacementFilter);
+    backdrop-filter: brightness(1.1) 
+        blur(2px)
+        url(#displacementFilter); */
+    -webkit-filter:  url(#container-glass);
+    filter: url(#container-glass);
+    overflow: hidden;
+}
+
+
+.liquid-glass {
+  /* width: 30px;
+  height: 20px; */
+  height: fit-content;
+  border-radius: 56.00000000000001px;
+  position: relative;
+  isolation: isolate;
+  /* box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-bottom: 1px solid rgba(255, 0, 149, 0.27); */
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;      
+  /* filter: url(#chromatic-aberration); */
+
+
+}
+
+.liquid-glass:focus {
+  outline: none;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 56px;
+  box-shadow: inset 0 0 15px -5px rgba(0, 0, 0, 0.364), 0px 6px 10px rgba(0, 0, 0, 0.2);
+  filter: url(#chromatic-aberration);
+
+  /* background-color: rgba(203, 122, 224, 0.1); */
+  
+}
+
+.liquid-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 56.00000000000001px;
+  border: 1px solid white;
+    /* filter: url(#chromatic-aberration); */
+
+  /* box-shadow: inset 0 0 15px -5px #00000046; */
+
+}
+
+.glass-text {
+  position: relative;
+  /* color: #ffffff; */
+  /* font-size: 24px;
+  font-weight: 400; */
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transform: translate(0px, 0px);
+  /* font-family: 'Georgia', 'Microsoft YaHei', '微软雅黑', serif; */
+}
+
+.chroma {
+  -webkit-backdrop-filter: url(#displacementFilter4);
+  backdrop-filter:url(#displacementFilter4);
+  /* background: transparent;
+  position: absolute;
+  z-index: 99; */
+}
