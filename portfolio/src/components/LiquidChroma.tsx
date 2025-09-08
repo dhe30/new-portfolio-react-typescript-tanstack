@@ -143,7 +143,7 @@ const filterId = useId();
         </svg>
       <div
         id="preview"
-        className="absolute test bg-transparent z-10"
+        className="absolute bg-transparent z-10 m-auto"
         style={{width: w, height: h, backdropFilter: `url(#${filterId})`, pointerEvents: "none"}}
         // style="width:200px;height:200px;backdrop-filter:url(#displacementFilter4)/* brightness(0.95)*/;pointer-events: none;"
       ></div>

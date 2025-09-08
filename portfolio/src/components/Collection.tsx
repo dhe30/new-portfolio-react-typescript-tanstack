@@ -1,3 +1,4 @@
+import GooeyButton from "./GooeyButton"
 import LiquidChroma from "./LiquidChroma"
 import Tag from "./Tag"
 
@@ -20,13 +21,15 @@ export default function Collection({tags, title, src, description} : CollectionP
                 <div className="flex  flex-1">
                     <p> {description} </p>
                 </div>
-                <div className="flex  flex-1">
-                <button type="button">Button</button>
+                <div className="flex flex-1 w-full test">
+                {/* <button type="button">Button</button> */}
+                    <GooeyButton></GooeyButton>
                 </div>
-                                    <LiquidChroma w={200} h={200}></LiquidChroma>
+                    <LiquidChroma w={200} h={200}></LiquidChroma>
             </div>
             <div className="flex-1 self-center bg-transparent">
-                <img src={src} className="max-w-full h-auto test bg-transparent" style={{maxHeight: "600px", minWidth: "300px"}}></img>
+                {/* <img src={src} className="max-w-full h-auto test bg-transparent" style={{maxHeight: "600px", minWidth: "300px"}}></img> */}
+                image
             </div>
         </div>
     )

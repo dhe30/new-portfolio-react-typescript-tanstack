@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -267,3 +268,66 @@ button:focus-visible {
   position: absolute;
   z-index: 99; */
 }
+
+/* @keyframes blob-right-top-anim{
+  0%{
+    transform:scale(1.1) translate(0,0);
+  }
+  33%{
+    transform:scale(0.9) translate($dist-x,0);
+  }
+  64%{
+    transform:scale(0.7) translate($dist-x,-$dist-y);
+  }
+  96%{
+    transform:scale(1.1) translate(0,0);
+  }
+} */
+
+.main-goo {
+  background-color: #646cff;
+}
+.secondary-goo {
+  background-color: #646cff;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  transform: translate(50px, -50%);
+  width: 50px;
+  height: 50px;
+  will-change: transform;
+  transition: transform 0.4s ease-in-out;
+}
+
+.goo-parent:hover > .secondary-goo {
+  transition: transform 0.4s ease-in-out;
+  /* right: -50px; */
+  transform: translate(140px, -50%);
+}
+
+.goo-parent {
+  padding: 0;
+  height: 80px;
+  width: 100%;
+}
+
+/* // <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name */
+
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.white-shadow {
+  text-shadow: 0 0 10px white;
+}
+

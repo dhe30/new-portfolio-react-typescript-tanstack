@@ -11,7 +11,7 @@ function Index() {
   return (
     <>    <Collection title={"Web Dev"} src={Webdev} description={"description"} tags={['React', 'TypeScript']}></Collection>
 
-                    <LiquidChroma w={400} h={400}></LiquidChroma>
+                    {/* <LiquidChroma w={400} h={400}></LiquidChroma> */}
 </>
   )
 }
