@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type CSSProperties, type PropsWithChildren } from "react";
 
 interface LiquidChromaPropType {
   w?: number;
@@ -13,6 +13,7 @@ interface LiquidChromaPropType {
   b1?: number; //pre-blur
   b2?: number; //post-blur
   c4?: number; //iridescence
+  className?: CSSProperties
 }
 export default function LiquidChroma({
   w = 200,
@@ -27,7 +28,9 @@ export default function LiquidChroma({
   b1 = 7,
   b2 = 0,
   c4 = 20,
-}: LiquidChromaPropType) {
+  className = {},
+  children
+}: PropsWithChildren<LiquidChromaPropType>) {
 const filterId = useId();
   return (
     <>
@@ -144,9 +147,11 @@ const filterId = useId();
       <div
         id="preview"
         className="absolute bg-transparent z-10 m-auto"
-        style={{width: w, height: h, backdropFilter: `url(#${filterId})`, pointerEvents: "none"}}
+        style={{...className, width: w, height: h, backdropFilter: `url(#${filterId})`, pointerEvents: "none"}}
         // style="width:200px;height:200px;backdrop-filter:url(#displacementFilter4)/* brightness(0.95)*/;pointer-events: none;"
-      ></div>
+      >
+        {children}
+      </div>
     </>
   );
 }

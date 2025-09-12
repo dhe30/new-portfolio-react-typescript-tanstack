@@ -25,7 +25,7 @@ export default function Collection({tags, title, src, description} : CollectionP
                 {/* <button type="button">Button</button> */}
                     <GooeyButton></GooeyButton>
                 </div>
-                    <LiquidChroma w={200} h={200}></LiquidChroma>
+                    {/* <LiquidChroma w={200} h={200}></LiquidChroma> */}
             </div>
             <div className="flex-1 self-center bg-transparent">
                 {/* <img src={src} className="max-w-full h-auto test bg-transparent" style={{maxHeight: "600px", minWidth: "300px"}}></img> */}
